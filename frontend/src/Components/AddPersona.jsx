@@ -6,7 +6,7 @@ import { addPersona } from "../store/personaSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
+import DefaultImg from "../assets/default.png"
 const ADD_PERSONA = gql`
   mutation AddPersona($input: PersonaInput!, $persona_image: String) {
     addPersona(input: $input, persona_image: $persona_image) {
@@ -80,7 +80,7 @@ export default function AddPersona() {
     <div className="container-fluid d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="card shadow-lg w-100 h-100 overflow-auto">
         <img
-          src={previewImage || "https://via.placeholder.com/1200x300.png?text=Persona+Image"}
+          src={previewImage ||DefaultImg}
           className="card-img-top"
           style={{ maxWidth: "100%", maxHeight: "300px", objectFit: "cover" }}
           alt="Persona Background"

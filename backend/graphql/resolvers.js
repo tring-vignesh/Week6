@@ -101,7 +101,7 @@ const resolvers = {
           },
           deletePersona: async (parent, { id }, context) => {
             const user = authMiddleware(context.token);
-            const { rows } = await pool.query("SELECT * FROM personas WHERE id = $1 AND user_id", [id,user.userId]);
+            const { rows } = await pool.query("SELECT * FROM personas WHERE id = $1 AND user_id=$2", [id,user.userId]);
             if (rows.length === 0) throw new Error("Persona not found or unauthorized");
       
             await pool.query("DELETE FROM personas WHERE id = $1", [id]);

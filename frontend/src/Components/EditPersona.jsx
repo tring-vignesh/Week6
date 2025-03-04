@@ -6,7 +6,7 @@
   import "bootstrap/dist/css/bootstrap.min.css";
   import ReactQuill from "react-quill";
   import "react-quill/dist/quill.snow.css";
-
+  import DefaultImg from "../assets/default.png"
   const GET_PERSONA = gql`
     query GetPersona($id: ID!) {
       getPersona(id: $id) {
@@ -133,7 +133,7 @@
       <div className="container-fluid d-flex justify-content-center align-items-center vh-100 bg-light">
         <div className="card shadow-lg w-100 h-100 overflow-auto">
           <img
-            src={persona.persona_image}
+            src={persona.persona_image||DefaultImg}
             className="card-img-top"
             style={{ maxWidth: "100%", maxHeight: "300px", objectFit: "cover" }}
             alt="Persona Background"

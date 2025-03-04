@@ -83,7 +83,7 @@ const Personalist = () => {
 
       <div
         className="card d-flex align-items-center justify-content-center p-4"
-        style={{ width: "18rem", cursor: "pointer" }}
+        style={{ width: "18rem", cursor: "pointer" ,height:"290px"}}
         onClick={addPersona}
       >
         <PlusCircle size={40} />
